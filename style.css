@@ -1,6 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap');
 
+:root {
+  --black: #111;
+  --primary-color: #fff;
+  --secondary-color: #3158db;
+  --bg-color: linear-gradient(45deg, transparent, #808080);
+  --bg-color-2: #e47663;
+
+  --font-size-main: 3rem;
+  --font-size-secondary: 1rem;
+
+  --button-bg-color: #53d8e1;
+}
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: var(--bg-color);
+  color: var(--black);
   font-family: 'Source Code Pro', monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn{
+  padding: 1em 1.5em;
+  font-size: var(--font-size-secondary);
+  color: var(--primary-color);
+  background-color: var(--bg-color-2);
+  border: none;
+  font-weight: 700;
+  transition: .4s all ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 3px 5px 5px #111;
+  background-color: var(--secondary-color);
+}
+
+.output {
+  border: 2px #111 solid;
+  margin: 1em 0;
+  background-color: #53d8e1;
 }
