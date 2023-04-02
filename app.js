@@ -1,6 +1,3 @@
-//Endpoint
-//https://random-data-api.com/api/v2/banks
-
 // create  elements
 const btnEl = document.querySelector(".btn");
 const outputEl = document.querySelector(".output");
@@ -9,15 +6,15 @@ const outputEl = document.querySelector(".output");
 const API = "https://random-data-api.com/api/v2/banks";
 
 // fetched data
-let dataApi = [];
+let dataApi;
 
 // fetch data
 const fetchData = async () => {
   try {
     const response = await fetch(API);
     const data = await response.json();
-    dataApi.push(data);
-    console.log(dataApi);
+    // store data to variable
+    dataApi = data;
     renderData(dataApi);
   } catch (error) {
     console.log("Error occured: ", error);
@@ -26,6 +23,8 @@ const fetchData = async () => {
 
 // display data
 const renderData = (d) => {
+  // converting object data type to array
+  d = [d];
   const renderItem = d
     .map(
       (item) =>
@@ -40,7 +39,9 @@ const renderData = (d) => {
   outputEl.innerHTML = renderItem;
 };
 
-btnEl.addEventListener("click", fetchData);
+btnEl.addEventListener("click", (e) => {
+  e.preventDefault();
+  fetchData();
+});
 
 //TODO
-//fix renderData map to array
