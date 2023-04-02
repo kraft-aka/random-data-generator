@@ -45,3 +45,4 @@ btnEl.addEventListener("click", (e) => {
 });
 
 //TODO
+// add random background color change func 
