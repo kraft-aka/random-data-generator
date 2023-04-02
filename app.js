@@ -9,39 +9,38 @@ const outputEl = document.querySelector(".output");
 const API = "https://random-data-api.com/api/v2/banks";
 
 // fetched data
-//let dataApi = [];
+let dataApi = [];
 
 // fetch data
 const fetchData = async () => {
   try {
     const response = await fetch(API);
-  const data = await response.json();
-  //dataApi.push(data);
-  //console.log(data);
-  renderData(data);
-  } catch(error) {
-    console.log('Error occured: ', error)
+    const data = await response.json();
+    dataApi.push(data);
+    console.log(dataApi);
+    renderData(dataApi);
+  } catch (error) {
+    console.log("Error occured: ", error);
   }
-  
 };
 
 // display data
-const renderData = (data) => {
-  //data = Object.keys(data);
-  console.log(data)
-  const renderItem = data.map((item) => 
-    `<ul>
+const renderData = (d) => {
+  const renderItem = d
+    .map(
+      (item) =>
+        `<ul>
         <li>Bank Name: ${item.bank_name}</li>
         <li>ID: ${item.id}</li>
         <li>IBAN: ${item.iban}</li>
         <li>Account: ${item.account_number}</li>
-    </ul>`)
-    .join('');
+    </ul>`
+    )
+    .join("");
   outputEl.innerHTML = renderItem;
 };
 
-
-btnEl.addEventListener('click', fetchData)
+btnEl.addEventListener("click", fetchData);
 
 //TODO
 //fix renderData map to array
