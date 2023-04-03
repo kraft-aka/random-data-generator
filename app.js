@@ -1,6 +1,7 @@
 // create  elements
 const btnEl = document.querySelector(".btn");
 const outputEl = document.querySelector(".output");
+const emojiEl = document.querySelector(".emoji");
 
 //Endpoint
 const API = "https://random-data-api.com/api/v2/banks";
@@ -39,10 +40,40 @@ const renderData = (d) => {
   outputEl.innerHTML = renderItem;
 };
 
+// renders emoji
+const showEmoji = () => {
+  const emojiArr = [
+    "✌",
+    "😂",
+    "😝",
+    "😁",
+    "😱",
+    "👉",
+    "🙌",
+    "😡",
+    "👿",
+    "👌",
+    "😍",
+    "😉",
+    "😓",
+    "😳",
+    "💪",
+    "💩",
+  ];
+  // defines ranodm number to pass it as index to array
+  let index = Math.floor(Math.random() * emojiArr.length);
+  emojiEl.innerHTML = emojiArr[index];
+};
+
 btnEl.addEventListener("click", (e) => {
   e.preventDefault();
   fetchData();
+  showEmoji();
 });
 
+emojiEl.addEventListener('mouseover', ()=> {
+  return
+})
+
 //TODO
-// add random background color change func 
+// add random background color change func

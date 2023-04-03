@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap");
 
 :root {
   --primary-color: #fff;
@@ -22,7 +22,7 @@ body {
   background-color: var(--bg-color-2);
   background-repeat: no-repeat;
   color: var(--secondary-color);
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 
 h1 {
@@ -30,7 +30,8 @@ h1 {
   /* text-shadow: var(--box-shadow-main); */
 }
 
-.btn{
+/* Button style */
+.btn {
   display: block;
   padding: 1em 2.5em;
   font-size: var(--font-size-secondary);
@@ -38,19 +39,20 @@ h1 {
   background-color: var(--button-bg-color);
   border: none;
   font-weight: 400;
-  transition: .4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
   margin: 1.5em auto;
   box-shadow: var(--box-shadow-main);
-  border: 3px #111 solid
+  border: 3px #111 solid;
 }
 
 .btn:hover {
   cursor: pointer;
   box-shadow: none;
   background-color: var(--secondary-color);
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
+/* Placeholder for output */
 .output {
   display: block;
   padding: 2em;
@@ -68,4 +70,23 @@ li {
 
 li:hover {
   cursor: pointer;
+}
+
+/* emoji placeholder */
+.emoji {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  width: 2em;
+  height: 2em;
+  font-size: 5em;
+  opacity: 0.95;
+  transition: 0.4s all ease-in-out;
+  border-bottom: 0.1em #111 solid;
+}
+
+.emoji:hover {
+  cursor: pointer;
+  /* transform: scale(5); */
+  opacity: 0;
 }
