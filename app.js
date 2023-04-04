@@ -65,15 +65,32 @@ const showEmoji = () => {
   emojiEl.innerHTML = emojiArr[index];
 };
 
+// changes the background color on click
+const changeBgColor = () => {
+  const colors = [
+    "#B565A7",
+    "#955251",
+    "#92A8D1",
+    "#F7CAC9",
+    "#88B04B",
+    "#6B5B95",
+    "#FF6F61",
+    "#34568B",
+  ];
+  let index = Math.floor(Math.random() * colors.length);
+  const colorBg = colors[index];
+  document.body.style.backgroundColor = colorBg;
+};
+
 btnEl.addEventListener("click", (e) => {
   e.preventDefault();
   fetchData();
   showEmoji();
+  changeBgColor();
 });
 
-emojiEl.addEventListener('mouseover', ()=> {
-  return
-})
+emojiEl.addEventListener("mouseover", () => {
+  return;
+});
 
 //TODO
-// add random background color change func
