@@ -30,10 +30,10 @@ const renderData = (d) => {
     .map(
       (item) =>
         `<ul>
-        <li>Bank Name: ${item.bank_name}</li>
-        <li>ID: ${item.id}</li>
-        <li>IBAN: ${item.iban}</li>
-        <li>Account: ${item.account_number}</li>
+        <li><strong>Bank Name:</strong> ${item.bank_name}</li>
+        <li><strong>ID:</strong> ${item.id}</li>
+        <li><strong>IBAN:</strong> ${item.iban}</li>
+        <li><strong>Account:</strong> ${item.account_number}</li>
     </ul>`
     )
     .join("");
