@@ -2,6 +2,9 @@
 const btnEl = document.querySelector(".btn");
 const outputEl = document.querySelector(".output");
 const emojiEl = document.querySelector(".emoji");
+const countEl = document.querySelector(".count");
+
+let count = 0;
 
 //Endpoint
 const API = "https://random-data-api.com/api/v2/banks";
@@ -82,11 +85,20 @@ const changeBgColor = () => {
   document.body.style.backgroundColor = colorBg;
 };
 
+const btnCountClicked = () => {
+  return count++;
+};
+
 btnEl.addEventListener("click", (e) => {
   e.preventDefault();
   fetchData();
   showEmoji();
   changeBgColor();
+});
+
+btnEl.addEventListener("click", () => {
+  btnCountClicked();
+  countEl.textContent = `Button clicked ${count} times`;
 });
 
 emojiEl.addEventListener("mouseover", () => {

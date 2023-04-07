@@ -72,6 +72,13 @@ li:hover {
   cursor: pointer;
 }
 
+/* Style for count */
+.count{
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 /* emoji placeholder */
 .emoji {
   display: block;
